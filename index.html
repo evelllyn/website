@@ -3,30 +3,298 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!--RWD必要元素-->
+  <title>Document</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com"   crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas  +Neue&family=Kenia&family=Noto+Sans+TC&display=swap"   rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&  family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
   <!-- 載入JQuery文自動效 -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   >
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Roboto+Mono:wght@200&display=swap');
+
+    /*導覽列格式*/
+    .header{
+      background-color: transparent;
+      width: auto;
+      height: 600px;
+      background-image: url(https://cdn.pixabay.com/photo/2016/11/14/13/22/vintage-1823439_960_720.png);
+      background-size: cover;
+      background-position: center;
+      font-family: 'Roboto Mono', monospace;
+      /*字加粗*/
+      font-weight: bold;
+      font-size: 25px;
+      display: flex;
+      padding: 10px;
+    }
+    .header a{
+      color: #111111;
+      /*去掉底線*/
+      text-decoration: none;
+      /*變block型態但又可以inline*/
+      display: inline-block;
+      padding: 10px;
+      /* 變化的時間拉長 */
+      transition: .5s;
+    }
+    .header a:hover{
+      background-color: #f5f5f5;
+      padding: 10px 20px;
+    }
+    nav{
+      /* 靠右邊排 */
+      text-align: right;
+      /*或是w100% 要把nav撐開*/
+      flex-grow: 1;
+      padding: 5px 30px;
+    }
+    .nav{
+      text-align: left;
+
+    }
+    /* banner */
+    .banner{
+      width: auto;
+      color: #111111;
+      font-size: 60px;
+      font-weight: bold;
+      text-align: center;
+      padding: 30px 30px 5px 30px;
+      font-family: 'Roboto Mono', monospace;
+    }
+
+    /*內容樣式*/
+    .ct{
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+    .en{
+      font-family: 'Roboto Mono', monospace;
+      font-size: 10px;
+      font-weight: lighter;
+      text-align: center;
+    }
+    .hr{
+      /* margin: 50px 500px 20px 500px; */
+      margin: 20px 600px 100px 600px;
+    }
+    /* 方塊 */
+    .box{
+      height: 200px;
+      /*操控內部物件*/
+      display: flex;
+      flex-direction: row;
+      /*跑到橫向的中間*/
+      justify-content: center;
+      /*跑到縱向的中間*/
+      align-items: center;
+    }
+    .item{
+      /*w200 +tab*/
+      width: 100px;
+      height: 100px;
+      background-color: #ffffff;
+      border: 3px solid #111111;
+      margin: 20px;
+      color: #111111;
+      /*圓角半徑*/
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 60px;
+      font-weight: bold;
+      font-family:'Roboto Mono', monospace;
+    }
+    .a{
+      background-color: #ffe940;
+    }
+    .c{
+      background-color: #ffe940;
+    }
+    .e{
+      background-color: #ffe940;
+    }
+    .i{
+      background-color: #ffe940;
+    }
+    /* 摺疊 */
+    .project{
+      flex: auto;
+      background-color: #111111;
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffe940;
+      margin: 30px 80px 0px 80px;
+      padding: 20px;
+      text-align: center;
+      font-family:'Roboto Mono', monospace;
+    }
+    /* .p-info{
+      background-color: #f5f38c;
+      border: 2px solid #111111;
+      margin: 0px 80px;
+      padding: 25px;
+      display: none;
+    } */
+    .p-info{
+      background-color: #ffffff;
+      border: 2px solid #111111;
+      color: #b1c1c6;
+      margin: 0px 80px;
+      padding: 25px;
+      display: none;
+    }
+    /* 卡片 */
+    .layout{
+      display: flex;
+      margin-top: 25px;
+    }
+    .card{
+      /* grow shrink basis */
+      flex: 1 1 auto;
+      margin: 3%;
+      width: 30%;
+      height: 350px;
+      box-shadow: 6px 6px 30px #bbbbbb;
+      border: 3px solid #111111;
+      border-radius: 20px;
+      position: relative;
+    }
+    .card img{
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+    }
+    .card img:hover{
+      /* 不透明度 0 ~ 1 */
+      opacity: .5;
+    }
+
+
+
+    /* 社群icon */
+    .block{
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      padding-top: 30px;
+    }
+    .icon{
+      margin: 0px 15px;
+    }
+
+    /*頁尾*/
+    .footer{
+      background-color: #f5f5f5;
+      color: #111111;
+      text-align: center;
+      padding: 10px 0px 30px 0px;
+    }
 
   </style>
 </head>
 <body>
   <!--導覽列-->
-  <nav>
-    <div>
-      <a href="#">
-        <img src="https://img.logoipsum.com/282.svg" alt="logo">
-        Lorem
-      </a>
+  <div class="header">
+    <nav class="nav">
+      <img src="https://img.logoipsum.com/282.svg" alt="logo">
+      <span style="color: #111111;">Lorem</span>
+    </nav>
+    <nav>
+      <a href="#">HOW</a>
+      <a href="#">ARE</a>
+      <a href="#">YOU</a>
+    </nav>
+  </div>
+
+  <!-- banner -->
+  <div class="banner" style="font-family:'Roboto Mono', monospace;">
+    LOREM
+  </div>
+
+  <!--網頁內容-->
+  <h3 class="en">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Laborum, doloribus dolorem accusantium voluptatum doloremque omnis odio explicabo rem saepe ab cumque aliquam.<br>Nulla, placeat, pariatur reprehenderit nam vero quasi aut quia magnam quisquam commodi impedit dolores deserunt beatae harum mollitia quae et explicabo!<br>Adipisci fuga enim tempore sit autem. Nulla reprehenderit eaque iusto modi doloremque
+  </h3>
+
+  <!-- 水平線 -->
+  <div class="hr">
+    <hr>
+  </div>
+
+  <!-- 方塊 -->
+  <div class="box">
+    <div class="item a">H</div>
+    <div class="item b">I</div>
+    <div class="item c">M</div>
+    <div class="item d">Y</div>
+    <div class="item e">F</div>
+    <div class="item f">R</div>
+    <div class="item g">I</div>
+    <div class="item h">E</div>
+    <div class="item i">N</div>
+    <div class="item j">D</div>
+  </div>
+
+  <!-- 摺疊 -->
+  <div class="project">
+    READY GO
+  </div>
+  <div class="p-info">
+    <strong>Lorem ipsum,</strong> dolor sit amet consectetur adipisicing elit. Earum minima explicabo necessitatibus fugit ratione, laboriosam magnam quibusdam temporibus! Temporibus totam vero velit eligendi dolorum aut aliquam expedita quam, possimus, perspiciatis quibusdam. <strong>Dolorum dicta accusamus tenetur provident quam sunt,</strong> iste perferendis deserunt possimus exercitationem, corrupti laudantium dolores consequatur, a eveniet pariatur eaque! Laboriosam, accusantium neque et voluptates nobis soluta totam laborum quasi accusamus fuga! Quod molestias laborum minus nostrum optio dolorum autem nesciunt recusandae libero impedit fugiat possimus, natus expedita non repudiandae id est ipsam cum reiciendis aspernatur quisquam consequatur doloribus? Earum minima explicabo necessitatibus fugit ratione, laboriosam magnam quibusdam temporibus! Asperiores nemo, vitae, in veniam temporibus deserunt, architecto quas rem dolorum incidunt neque. Nemo esse molestiae cumque natus, sed sequi aut! <strong>Enim similique voluptas, eius quisquam ex vero sapiente illum explicabo hic maxime voluptatem alias corrupti at quod.</strong> Neque blanditiis omnis id, architecto ullam adipisci soluta asperiores inventore iusto repudiandae molestias nesciunt repellendus corrupti quidem eligendi maiores non, placeat doloremque, tempore tenetur!
+  </div>
+
+  <!-- 卡片 -->
+  <div class="layout">
+    <div class="card">
+      <img src="https://cdn.pixabay.com/photo/2022/01/26/11/19/river-6968614_960_720.png" alt="card-pic">
     </div>
-  </nav>
+    <div class="card">
+      <img src="https://cdn.pixabay.com/photo/2019/09/30/10/12/notredame-de-paris-4515298_960_720.jpg" alt="card-pic">
+    </div>
+    <div class="card">
+      <img src="https://cdn.pixabay.com/photo/2022/01/26/11/19/river-6968614_960_720.png" alt="card-pic">
+    </div>
+  </div>
+
+
+  <div class="block">
+    <div class="icon aa">
+      <a href="#"><img src="img/Instagram.png" alt="icon-instagram"></a>
+    </div>
+    <div class="icon bb">
+      <a href="#"><img src="img/Twitter.png" alt="icon-twitter"></a>
+    </div>
+    <div class="icon cc">
+      <a href="#"><img src="img/Github.png" alt="icon-github"></a>
+    </div>
+    <div class="icon dd">
+      <a href="#"><img src="img/Discord.png" alt="icon-discord"></a>
+    </div>
+    <div class="icon ee">
+      <a href="#"><img src="img/Twitch.png" alt="icon-twitch"></a>
+    </div>
+  </div>
+
+  <!-- 頁尾 -->
+  <div class="footer">
+    Copyright &copy 2023 by Lorem
+  </div>
+
+  <!-- 載入JQuery函式庫 -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+  <!-- JQuery控制 -->
+  <script>
+    $(".project").hover(function(){
+      $(".p-info").slideToggle();
+    })
+  </script>
 
 </body>
 </html>
