@@ -110,18 +110,10 @@
       font-weight: bold;
       font-family:'Roboto Mono', monospace;
     }
-    .a{
+    .item:hover{
       background-color: #ffe940;
     }
-    .c{
-      background-color: #ffe940;
-    }
-    .e{
-      background-color: #ffe940;
-    }
-    .i{
-      background-color: #ffe940;
-    }
+
     /* 摺疊 */
     .project{
       flex: auto;
@@ -134,21 +126,14 @@
       text-align: center;
       font-family:'Roboto Mono', monospace;
     }
-    /* .p-info{
-      background-color: #f5f38c;
-      border: 2px solid #111111;
-      margin: 0px 80px;
-      padding: 25px;
-      display: none;
-    } */
     .p-info{
-      background-color: #ffffff;
+      background-color: #fff387;
       border: 2px solid #111111;
-      color: #b1c1c6;
       margin: 0px 80px;
       padding: 25px;
       display: none;
     }
+
     /* 卡片 */
     .layout{
       display: flex;
@@ -161,7 +146,7 @@
       width: 30%;
       height: 350px;
       box-shadow: 6px 6px 30px #bbbbbb;
-      border: 3px solid #111111;
+      border: 2px solid #111111;
       border-radius: 20px;
       position: relative;
     }
@@ -175,11 +160,36 @@
       opacity: .5;
     }
 
+    /* 按鈕 */
+    .btn{
+      font-size: 25px;
+      font-weight: bold;
+      font-family:'Roboto Mono', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
+    }
+    .btns{
+      text-decoration: none;
+      color: #111111;
+      border: 2px solid #111111;
+      border-radius: 40px;
+      margin: 5% 9% 5% 9%;
+      padding: 20px 40px;
+    }
+    .btns:hover{
+      color: #ffffff;
+      background-color: #111111;
+    }
+
+    /* 水平線 */
+    .hrs{
+      margin: 70px 600px 0 600px;
+    }
 
     /* 社群icon */
     .block{
-      background-color: #f5f5f5;
       display: flex;
       justify-content: center;
       padding-top: 30px;
@@ -190,7 +200,6 @@
 
     /*頁尾*/
     .footer{
-      background-color: #f5f5f5;
       color: #111111;
       text-align: center;
       padding: 10px 0px 30px 0px;
@@ -206,8 +215,8 @@
       <span style="color: #111111;">Lorem</span>
     </nav>
     <nav>
-      <a href="#">HOW</a>
-      <a href="#">ARE</a>
+      <a href="#box">HOW</a>
+      <a href="#card">ARE</a>
       <a href="#">YOU</a>
     </nav>
   </div>
@@ -228,7 +237,7 @@
   </div>
 
   <!-- 方塊 -->
-  <div class="box">
+  <div class="box" id="box">
     <div class="item a">H</div>
     <div class="item b">I</div>
     <div class="item c">M</div>
@@ -250,7 +259,7 @@
   </div>
 
   <!-- 卡片 -->
-  <div class="layout">
+  <div class="layout" id="card">
     <div class="card">
       <img src="https://cdn.pixabay.com/photo/2022/01/26/11/19/river-6968614_960_720.png" alt="card-pic">
     </div>
@@ -262,7 +271,17 @@
     </div>
   </div>
 
+  <!-- 按鈕 -->
+  <div class="btn">
+    <a href="#" class="btns">Get started</a>
+  </div>
 
+  <!-- 水平線 -->
+  <div class="hrs">
+    <hr>
+  </div>
+
+  <!-- 社群圖示 -->
   <div class="block">
     <div class="icon aa">
       <a href="#"><img src="img/Instagram.png" alt="icon-instagram"></a>
