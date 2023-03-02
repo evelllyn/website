@@ -1,9 +1,19 @@
 <style>
-  .box{
-    height: 200px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  .p-info{
+      background-color: #fff387;
+      border: 2px solid #111111;
+      margin: 0px 80px;
+      padding: 25px;
+      display: none;
     }
 </style>
+
+<!-- 載入JQuery函式庫 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<!-- JQuery控制 -->
+<script>
+  $(".project").hover(function(){
+    $(".p-info").slideToggle();
+  })
+</script>
