@@ -164,6 +164,9 @@
       border-radius: 20px;
       position: relative;
     }
+    .card:hover .text{
+      display: block;
+    }
     .card img{
       width: 100%;
       height: 100%;
@@ -171,7 +174,13 @@
     }
     .card img:hover{
       /* 不透明度 0 ~ 1 */
-      opacity: .5;
+      opacity: .3;
+    }
+    .text{
+      position: absolute;
+      top: 45%;
+      left: 20%;
+      display: none;
     }
 
     /* 按鈕 */
@@ -316,12 +325,15 @@
   <div class="layout" id="card">
     <div class="card">
       <img src="https://cdn.pixabay.com/photo/2022/01/26/11/19/river-6968614_960_720.png" alt="card-pic">
+      <h4 class="text">DO YOU WANNA PLAY</h4>
     </div>
     <div class="card">
       <img src="https://cdn.pixabay.com/photo/2019/09/30/10/12/notredame-de-paris-4515298_960_720.jpg" alt="card-pic">
+      <h4 class="text">DO YOU WANNA PLAY</h4>
     </div>
     <div class="card">
       <img src="https://cdn.pixabay.com/photo/2022/01/26/11/19/river-6968614_960_720.png" alt="card-pic">
+      <h4 class="text">DO YOU WANNA PLAY</h4>
     </div>
   </div>
 
